@@ -53,4 +53,13 @@ public class CongVan {
     @Column(name="NoiNhan", columnDefinition = "nvarchar", length = 300)
     @ApiModelProperty(notes = "Nơi nhận")
     String noiNhan;
+
+    @Column(name="MaLinhVuc")
+    @ApiModelProperty(notes = "Mã lĩnh vực")
+    Integer maLinhVuc;
+
+    @Column(name="MaLoai")
+    @ApiModelProperty(notes = "Mã loại")
+    Integer maLoai;
+
 }

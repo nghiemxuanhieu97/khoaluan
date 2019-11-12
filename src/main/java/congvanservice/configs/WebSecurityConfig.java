@@ -3,6 +3,7 @@ package congvanservice.configs;
 import congvanservice.jwt.JWTAuthenticationFilter;
 import congvanservice.jwt.JWTLoginFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
@@ -20,8 +21,7 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
-    @Autowired
-    private ResourceServerClientConfig resourceServerClientConfig;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("Hieu").password("{noop}123456").roles("Admin");
@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        if(resourceServerClientConfig.enabled) {
+        if(ResourceServerClientConfig.enabled) {
             http.csrf().disable().authorizeRequests()
                     .antMatchers("/", "/swagger-ui.html").permitAll() // Có nghĩa là request "/" ko cần phải đc xác thực
                     .antMatchers(HttpMethod.POST, "/login").permitAll() // Request dạng POST tới "/login" luôn được phép truy cập dù là đã authenticated hay chưa
