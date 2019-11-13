@@ -1,4 +1,4 @@
-package congvanservice.services;
+package congvanservice.scanner;
 
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
@@ -7,6 +7,8 @@ import java.io.File;
 
 
 public class Scanner {
+    //Lưu File
+    //Scanner
     public static void scanner() {
         File imageFile = new File("D:\\Java Project\\khoaluan\\src\\main\\resources\\sample.png");
         ITesseract instance = new Tesseract();  // JNA Interface Mapping
