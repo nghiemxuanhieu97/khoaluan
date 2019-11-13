@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/CongVan.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/CongVan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/TaiKhoan.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/TaiKhoan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/CongVanServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/CongVanServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/configs/ResourceServerClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/configs/ResourceServerClientConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/configs/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/configs/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/models/TaiKhoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/models/TaiKhoan.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +79,7 @@
       <recent name="congvanservice.configs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Java\Java Project\CongVanService\src\main\resources" />
       <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice" />
     </key>
   </component>

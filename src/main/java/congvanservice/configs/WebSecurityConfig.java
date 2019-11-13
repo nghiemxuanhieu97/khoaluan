@@ -22,6 +22,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
+    @Autowired
+    ResourceServerClientConfig resourceServerClientConfig;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("Hieu").password("{noop}123456").roles("Admin");
@@ -36,10 +39,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        if(ResourceServerClientConfig.enabled) {
+        if(resourceServerClientConfig.enabled) {
             http.csrf().disable().authorizeRequests()
                     .antMatchers("/", "/swagger-ui.html").permitAll() // Có nghĩa là request "/" ko cần phải đc xác thực
                     .antMatchers(HttpMethod.POST, "/login").permitAll() // Request dạng POST tới "/login" luôn được phép truy cập dù là đã authenticated hay chưa
+                    .antMatchers(HttpMethod.POST, "/scanner").permitAll()
                     .anyRequest().authenticated() // Các request còn lại đều cần được authenticated
                     .and()
                     // Add các filter vào ứng dụng của chúng ta, thứ mà sẽ hứng các request để xử lý trước khi tới các xử lý trong controllers.
