@@ -1,5 +1,8 @@
 package congvanservice.controllers;
 
+import congvanservice.scanner.CongVanContent;
+import congvanservice.scanner.ReadPDF;
+import congvanservice.scanner.Scanner;
 import congvanservice.scanner.UploadFileResponse;
 import congvanservice.services.FileStorageService;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-
+import congvanservice.scanner.Scanner.*;
 @RestController
 @RequestMapping("/api")
 public class FileController {
@@ -35,17 +41,29 @@ public class FileController {
                     .path("/downloadFile/")
                     .path(fileName)
                     .toUriString();
+            try {
+                String src = fileStorageService.getFileStorageLocation().toString()+"\\"+fileName;
+                String dst = fileStorageService.getFileStorageLocation().toString()+"\\"+fileName.split("\\.")[0];
+
+//                Scanner.imageToText(src.replace("\\","\\\\"), dst.replace("\\","\\\\"));
+                Scanner.imageToPDF(src.replace("\\","\\\\"), dst.replace("\\","\\\\"));
+                ReadPDF.readPDF(fileStorageService.getFileStorageLocation().toString()+"\\"+fileName.split("\\.")[0]+".pdf");
+            } catch (IOException e) {
+                e.getStackTrace();
+            }
 
             return new UploadFileResponse(fileName, fileDownloadUri,
                     file.getContentType(), file.getSize());
-
     }
 
     @PostMapping("/uploadMultipleFiles")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
-        return Arrays.asList(files)
-                .stream()
-                .map(file -> uploadFile(file))
+//        for (MultipartFile file: files) {
+//            fileStorageService.storeFile(file);
+//        }
+
+        return Arrays.stream(files)
+                .map(this::uploadFile)
                 .collect(Collectors.toList());
     }
 
@@ -71,5 +89,41 @@ public class FileController {
                 .contentType(MediaType.parseMediaType(contentType))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
                 .body(resource);
+    }
+
+    @PostMapping("/readFile")
+    public ResponseEntity<CongVanContent> readFile(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws InterruptedException, IOException {
+        String fileName = fileStorageService.storeFile(file);
+        final String[] content = {""};
+
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/downloadFile/")
+                .path(fileName)
+                .toUriString();
+        String src = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName;
+        String dst = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName.split("\\.")[0];
+
+            CompletableFuture<Void> cf = CompletableFuture.runAsync(() ->
+            {
+                try {
+                    Scanner.imageToPDF(src.replace("\\", "\\\\"), dst.replace("\\", "\\\\"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+          cf.thenRun(() ->
+                  content[0] = ReadPDF.readPDF(fileStorageService.getFileStorageLocation().toString() + "\\" + fileName.split("\\.")[0] + ".pdf")
+);
+
+        // Load file as Resource
+        Resource resource = fileStorageService.loadFileAsResource(fileName.split("\\.")[0]+".png");
+        // Try to determine file's content type
+        String contentType = null;
+        CongVanContent congVanContent = new CongVanContent(fileName.split("\\.")[0], content[0]);
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/json"))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                .body(congVanContent);
+
     }
 }

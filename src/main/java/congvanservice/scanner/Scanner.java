@@ -1,25 +1,23 @@
 package congvanservice.scanner;
 
-import net.sourceforge.tess4j.ITesseract;
-import net.sourceforge.tess4j.Tesseract;
-import net.sourceforge.tess4j.TesseractException;
-import java.io.File;
-
+import java.io.IOException;
 
 public class Scanner {
     //Lưu File
     //Scanner
-    public static void scanner() {
-        File imageFile = new File("D:\\Java Project\\khoaluan\\src\\main\\resources\\sample.png");
-        ITesseract instance = new Tesseract();  // JNA Interface Mapping
-        instance.setLanguage("vie");
-        instance.setDatapath("D:\\Java Project\\khoaluan\\src\\main\\resources"); // path to tessdata directory
-        try {
-            String result = instance.doOCR(imageFile);
-            System.out.println(result);
-        } catch (TesseractException e) {
-            System.err.println(e.getMessage());
-        }
+    public static void imageToText(String src, String dst) throws IOException {
+//        Example command
+//        cmd /c cmd.exe /K \"tesseract C:\\Users\\HieuNghiem\\Desktop\\sample.png C:\\Users\\HieuNghiem\\Desktop\\sample.txt -l vie
+//        cmd /c cmd.exe /K tesseract "G:\\Java\\Java Project\\CongVanService\\hinh-cong-van\\sample.png" "G:\\Java\\Java Project\\CongVanService\\hinh-cong-van\\sample.txt"
+//        -l vie
+        String command = "cmd /c cmd.exe /K tesseract "+"\""+src+"\""+" "+"\""+dst+"\""+" -l vie";
+        Runtime.getRuntime()
+                .exec(command);
+    }
+    public static void imageToPDF(String src, String dst) throws IOException {
+        String command = "cmd /c cmd.exe /K tesseract -l vie "+"\""+src+"\""+" "+"\""+dst+"\""+" pdf";
+        Runtime.getRuntime()
+                .exec(command);
     }
 
 }
