@@ -9,32 +9,17 @@ import java.io.IOException;
 
 public class ReadPDF {
     public static String readPDF(String src) {
-        String pdfFileInText = "";
+        String pdfFileInText = "File not exist or cannot upload pdf to read";
         try {
             PDDocument document = PDDocument.load(new File(src));
-//            document.getClass();
-
             if (!document.isEncrypted()) {
-
                 PDFTextStripperByArea stripper = new PDFTextStripperByArea();
                 stripper.setSortByPosition(true);
-
                 PDFTextStripper tStripper = new PDFTextStripper();
-
                 pdfFileInText = tStripper.getText(document);
-//                System.out.println("Text:" + pdfFileInText);
-
-                // split by whitespace
-//                String[] lines = pdfFileInText.split("\\r?\\n");
-//                for (String line : lines) {
-//                    System.out.println(line);
-//                }
-
             }
-
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Cannot upload pdf to read");
         }
         return pdfFileInText;
     }

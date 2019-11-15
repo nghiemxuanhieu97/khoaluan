@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class FileController {
 //                Scanner.imageToText(src.replace("\\","\\\\"), dst.replace("\\","\\\\"));
                 Scanner.imageToPDF(src.replace("\\","\\\\"), dst.replace("\\","\\\\"));
                 ReadPDF.readPDF(fileStorageService.getFileStorageLocation().toString()+"\\"+fileName.split("\\.")[0]+".pdf");
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 e.getStackTrace();
             }
 
@@ -94,36 +95,22 @@ public class FileController {
     @PostMapping("/readFile")
     public ResponseEntity<CongVanContent> readFile(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws InterruptedException, IOException {
         String fileName = fileStorageService.storeFile(file);
-        final String[] content = {""};
-
+        String content = "";
+        int flag = 1;
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path(fileName)
                 .toUriString();
         String src = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName;
         String dst = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName.split("\\.")[0];
+        //Lưu file PDF vào đường dẫn đã định
+        Scanner.imageToPDF(src.replace("\\", "\\\\"), dst.replace("\\", "\\\\"));
+        content = ReadPDF.readPDF(fileStorageService.getFileStorageLocation().toString() + "\\" + fileName.split("\\.")[0] + ".pdf");
 
-            CompletableFuture<Void> cf = CompletableFuture.runAsync(() ->
-            {
-                try {
-                    Scanner.imageToPDF(src.replace("\\", "\\\\"), dst.replace("\\", "\\\\"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-          cf.thenRun(() ->
-                  content[0] = ReadPDF.readPDF(fileStorageService.getFileStorageLocation().toString() + "\\" + fileName.split("\\.")[0] + ".pdf")
-);
-
-        // Load file as Resource
-        Resource resource = fileStorageService.loadFileAsResource(fileName.split("\\.")[0]+".png");
-        // Try to determine file's content type
-        String contentType = null;
-        CongVanContent congVanContent = new CongVanContent(fileName.split("\\.")[0], content[0]);
+        CongVanContent congVanContent = new CongVanContent(fileName.split("\\.")[0], content);
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType("application/json"))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION)
                 .body(congVanContent);
-
     }
 }
