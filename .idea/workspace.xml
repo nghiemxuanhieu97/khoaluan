@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/khoaluan.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
@@ -13,10 +11,25 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/CongVanServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/CongVanServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/CongVanServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/CongVanServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/CongVanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/CongVanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/jwt/JWTLoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/jwt/JWTLoginFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/ReadPDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/ReadPDF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/Scanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/Scanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TokenAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TokenAuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/hinh-cong-van/sample.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/hinh-cong-van/sample1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/ReadPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/ReadPDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/Scanner.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +69,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SF9OMutVc6BK9KFWYx9rPFOo3M" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -67,16 +82,16 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice\exceptions" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Java\Java Project\CongVanService\src\main\resources" />
+      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="congvanservice.configs" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice\exceptions" />
       <recent name="G:\Java\Java Project\CongVanService\src\main\resources" />
-      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -142,6 +157,21 @@
       <option name="presentableId" value="Default" />
       <updated>1571148443126</updated>
     </task>
+    <task id="LOCAL-00001" summary="UploadImage">
+      <created>1573667974943</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573667974943</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixing acrony">
+      <created>1573746477322</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573746477323</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,5 +186,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="UploadImage" />
+    <MESSAGE value="Fixing acrony" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing acrony" />
   </component>
 </project>
