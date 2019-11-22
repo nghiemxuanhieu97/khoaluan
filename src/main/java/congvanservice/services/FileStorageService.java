@@ -15,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 
 @Service
 public class FileStorageService {
@@ -34,7 +35,11 @@ public class FileStorageService {
 
     public String storeFile(MultipartFile file) {
         // Normalize file name
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+            String temp = LocalDateTime.now().toString().replace("T00","");
+            temp = temp.replace("-","");
+            temp = temp.replace(":","");
+            String fileName = temp.replace(".","");
 
         try {
             // Check if the file's name contains invalid characters

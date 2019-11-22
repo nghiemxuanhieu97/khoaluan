@@ -62,4 +62,12 @@ public class CongVan {
     @ApiModelProperty(notes = "Mã loại")
     Integer maLoai;
 
+    @Column(name="NoiDung")
+    @ApiModelProperty(notes = "Nội dung")
+    String noiDung;
+
+    @Column(name="TimDong")
+    @ApiModelProperty(notes = "Tìm dòng")
+    String timDong;
+
 }

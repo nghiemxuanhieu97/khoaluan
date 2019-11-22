@@ -18,14 +18,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-import congvanservice.scanner.Scanner.*;
 @RestController
 @RequestMapping("/api")
 public class FileController {
@@ -35,7 +30,7 @@ public class FileController {
     private FileStorageService fileStorageService;
 
     @PostMapping(value="/uploadFile")
-    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
+    UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
             String fileName = fileStorageService.storeFile(file);
 
             String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -45,8 +40,7 @@ public class FileController {
             try {
                 String src = fileStorageService.getFileStorageLocation().toString()+"\\"+fileName;
                 String dst = fileStorageService.getFileStorageLocation().toString()+"\\"+fileName.split("\\.")[0];
-
-//                Scanner.imageToText(src.replace("\\","\\\\"), dst.replace("\\","\\\\"));
+//              Scanner.imageToText(src.replace("\\","\\\\"), dst.replace("\\","\\\\"));
                 Scanner.imageToPDF(src.replace("\\","\\\\"), dst.replace("\\","\\\\"));
                 ReadPDF.readPDF(fileStorageService.getFileStorageLocation().toString()+"\\"+fileName.split("\\.")[0]+".pdf");
             } catch (IOException | InterruptedException e) {
@@ -59,10 +53,9 @@ public class FileController {
 
     @PostMapping("/uploadMultipleFiles")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
-//        for (MultipartFile file: files) {
-//            fileStorageService.storeFile(file);
-//        }
-
+        for (MultipartFile file: files) {
+            fileStorageService.storeFile(file);
+        }
         return Arrays.stream(files)
                 .map(this::uploadFile)
                 .collect(Collectors.toList());
@@ -96,7 +89,6 @@ public class FileController {
     public ResponseEntity<CongVanContent> readFile(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws InterruptedException, IOException {
         String fileName = fileStorageService.storeFile(file);
         String content = "";
-        int flag = 1;
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path(fileName)

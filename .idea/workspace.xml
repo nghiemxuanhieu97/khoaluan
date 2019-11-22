@@ -4,32 +4,28 @@
     <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/CongVanServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/CongVanServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/CongVanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/CongVanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/jwt/JWTLoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/jwt/JWTLoginFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/ReadPDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/ReadPDF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/Scanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/Scanner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TokenAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TokenAuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/hinh-cong-van/sample.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/hinh-cong-van/sample1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/CongVan.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/CongVan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/FileStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/FileStorageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/Báo cáo khoá luận.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/Bản tường trình vắng mặt BCKL - CTK39.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/img016.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/img016.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.txt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/ReadPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/ReadPDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/scanner/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/services/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/services/FileStorageService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,16 +78,16 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice\exceptions" />
       <recent name="G:\Java\Java Project\CongVanService\src\main\resources" />
-      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="congvanservice.configs" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice\exceptions" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Java\Java Project\CongVanService\src\main\resources" />
+      <recent name="G:\Java\Java Project\CongVanService\src\main\java\congvanservice" />
     </key>
   </component>
   <component name="RunDashboard">
