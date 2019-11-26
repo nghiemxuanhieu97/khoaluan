@@ -16,6 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class FileStorageService {
@@ -36,24 +37,28 @@ public class FileStorageService {
     public String storeFile(MultipartFile file) {
         // Normalize file name
 //        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-            String temp = LocalDateTime.now().toString().replace("T00","");
-            temp = temp.replace("-","");
-            temp = temp.replace(":","");
-            String fileName = temp.replace(".","");
+//            String temp = LocalDateTime.now().format("")
+//            temp = temp.replace("-","");
+//            temp = temp.replace(":","");
+//            String fileName = temp.replace(".","");
+        final String DATE_FORMATTER= "yyyyMMddHHmmss";
+        LocalDateTime localDateTime = LocalDateTime.now(); //get current date time
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMATTER);
+        String formatFileName = localDateTime.format(formatter)+".pdf";
 
         try {
             // Check if the file's name contains invalid characters
-            if(fileName.contains("..")) {
-                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+            if(formatFileName.contains("..")) {
+                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + formatFileName);
             }
 
             // Copy file to the target location (Replacing existing file with the same name)
-            Path targetLocation = this.fileStorageLocation.resolve(fileName);
+            Path targetLocation = this.fileStorageLocation.resolve(formatFileName);
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
-            return fileName;
+            return formatFileName;
         } catch (IOException ex) {
-            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
+            throw new FileStorageException("Could not store file " + formatFileName + ". Please try again!", ex);
         }
     }
 

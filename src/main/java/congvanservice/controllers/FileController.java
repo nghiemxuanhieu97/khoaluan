@@ -89,10 +89,7 @@ public class FileController {
     public ResponseEntity<CongVanContent> readFile(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws InterruptedException, IOException {
         String fileName = fileStorageService.storeFile(file);
         String content = "";
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadFile/")
-                .path(fileName)
-                .toUriString();
+
         String src = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName;
         String dst = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName.split("\\.")[0];
         //Lưu file PDF vào đường dẫn đã định
