@@ -36,7 +36,7 @@ public class FileStorageService {
 
     public String storeFile(MultipartFile file) {
         // Normalize file name
-//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 //            String temp = LocalDateTime.now().format("")
 //            temp = temp.replace("-","");
 //            temp = temp.replace(":","");
@@ -44,7 +44,7 @@ public class FileStorageService {
         final String DATE_FORMATTER= "yyyyMMddHHmmss";
         LocalDateTime localDateTime = LocalDateTime.now(); //get current date time
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMATTER);
-        String formatFileName = localDateTime.format(formatter)+".pdf";
+        String formatFileName = localDateTime.format(formatter)+"."+fileName.split("\\.")[1];
 
         try {
             // Check if the file's name contains invalid characters
