@@ -1,5 +1,6 @@
 package congvanservice.controllers;
 
+import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
 import congvanservice.models.TaiKhoan;
 import congvanservice.services.TaiKhoanService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -43,7 +45,11 @@ public class TaiKhoanController {
 
     @ApiOperation(value = "Thêm một tài khoản mới")
     @PostMapping(value = "/taikhoan")
-    public TaiKhoan createTaiKhoan(@RequestBody TaiKhoan taiKhoan) {
+    public TaiKhoan createTaiKhoan(@RequestBody TaiKhoan taiKhoan) throws ResourceExistException {
+        Optional<TaiKhoan> taiKhoan1 = taiKhoanService.findTaiKhoanById(taiKhoan.getMaTaiKhoan());
+        if(taiKhoan1.isPresent()) {
+            throw new ResourceExistException("Tài khoản đã tổn tại.");
+        }
         return taiKhoanService.saveTaiKhoan(taiKhoan);
     }
 

@@ -1,5 +1,6 @@
 package congvanservice.controllers;
 
+import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
 import congvanservice.models.LinhVuc;
 import congvanservice.services.LinhVucService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -44,7 +46,11 @@ public class LinhVucController {
 
     @ApiOperation(value = "Thêm một lĩnh vực mới")
     @PostMapping(value = "/linhvuc")
-    public LinhVuc createLinhVuc(@RequestBody LinhVuc linhVuc) {
+    public LinhVuc createLinhVuc(@RequestBody LinhVuc linhVuc) throws ResourceExistException {
+        Optional<LinhVuc> linhvuc1 = linhVucService.findLinhVucById(linhVuc.getMaLinhVuc());
+        if(linhvuc1.isPresent()) {
+            throw new ResourceExistException("Lĩnh vực đã tổn tại.");
+        }
         return linhVucService.saveLinhVuc(linhVuc);
     }
 

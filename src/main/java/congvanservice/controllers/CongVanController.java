@@ -1,5 +1,6 @@
 package congvanservice.controllers;
 
+import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
 import congvanservice.models.CongVan;
 import congvanservice.services.CongVanService;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -45,7 +47,11 @@ public class CongVanController {
 
     @ApiOperation(value = "Thêm một công văn mới")
     @PostMapping(value = "/congvan")
-    public CongVan createCongVan(@RequestBody CongVan congVan) {
+    public CongVan createCongVan(@RequestBody CongVan congVan) throws ResourceExistException {
+        Optional<CongVan> congVan1 = congVanService.findCongVanById(congVan.getId());
+        if(congVan1.isPresent()) {
+            throw new ResourceExistException("Công văn đã tổn tại.");
+        }
         return congVanService.saveCongVan(congVan);
     }
 

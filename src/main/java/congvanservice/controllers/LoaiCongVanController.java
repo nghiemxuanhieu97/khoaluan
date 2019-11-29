@@ -1,9 +1,8 @@
 package congvanservice.controllers;
 
+import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
-import congvanservice.models.CongVan;
 import congvanservice.models.LoaiCongVan;
-import congvanservice.services.CongVanService;
 import congvanservice.services.LoaiCongVanService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -45,7 +45,11 @@ public class LoaiCongVanController {
 
     @ApiOperation(value = "Thêm một loại công văn mới")
     @PostMapping(value = "/loaicongvan")
-    public LoaiCongVan createLoaiCongVan(@RequestBody LoaiCongVan loaiCongVan) {
+    public LoaiCongVan createLoaiCongVan(@RequestBody LoaiCongVan loaiCongVan) throws ResourceExistException {
+        Optional<LoaiCongVan> loaiCongVan1 = loaiCongVanService.findLoaiCongVanById(loaiCongVan.getMaLoai());
+        if(loaiCongVan1.isPresent()) {
+            throw new ResourceExistException("Loại công văn đã tổn tại.");
+        }
         return loaiCongVanService.saveLoaiCongVan(loaiCongVan);
     }
 
