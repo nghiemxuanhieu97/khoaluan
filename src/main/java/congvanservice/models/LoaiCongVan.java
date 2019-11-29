@@ -4,10 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,6 +12,7 @@ import javax.persistence.Table;
 @ApiModel(description = "Loại công văn")
 public class LoaiCongVan {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Maloai")
     @ApiModelProperty(notes = "Mã loại")
     private Integer maLoai;

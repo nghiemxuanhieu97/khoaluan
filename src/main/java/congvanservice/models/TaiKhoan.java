@@ -7,10 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="TaiKhoan")
@@ -18,6 +15,7 @@ import javax.persistence.Table;
 public class TaiKhoan {
     @Id
     @Column(name = "MaTaiKhoan")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @ApiModelProperty(notes = "Mã tài khoản")
     Integer maTaiKhoan;
 
