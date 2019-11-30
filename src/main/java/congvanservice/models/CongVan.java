@@ -26,7 +26,7 @@ public class CongVan {
     @ApiModelProperty(notes = "Mức độ")
     Integer mucDo;
 
-    @Column(name="TrichYeu", columnDefinition = "nvarchar", length = 300)
+    @Column(name="TrichYeu", columnDefinition = "nvarchar", length = 4000)
     @ApiModelProperty(notes = "Trích yếu")
     String trichYeu;
 
@@ -62,11 +62,11 @@ public class CongVan {
     @ApiModelProperty(notes = "Mã loại")
     Integer maLoai;
 
-    @Column(name="NoiDung")
+    @Column(name="NoiDung", columnDefinition = "nvarchar", length = 4000)
     @ApiModelProperty(notes = "Nội dung")
     String noiDung;
 
-    @Column(name="TimDong")
+    @Column(name="TimDong", columnDefinition = "nvarchar", length = 4000)
     @ApiModelProperty(notes = "Tìm dòng")
     String timDong;
 
