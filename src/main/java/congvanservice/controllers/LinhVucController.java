@@ -49,7 +49,7 @@ public class LinhVucController {
     public LinhVuc createLinhVuc(@RequestBody LinhVuc linhVuc) throws ResourceExistException {
         Optional<LinhVuc> linhvuc1 = linhVucService.findLinhVucById(linhVuc.getMaLinhVuc());
         if(linhvuc1.isPresent()) {
-            throw new ResourceExistException("Lĩnh vực đã tổn tại.");
+            throw new ResourceExistException("Lĩnh vực đã tồn tại.");
         }
         return linhVucService.saveLinhVuc(linhVuc);
     }

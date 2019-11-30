@@ -48,7 +48,7 @@ public class TaiKhoanController {
     public TaiKhoan createTaiKhoan(@RequestBody TaiKhoan taiKhoan) throws ResourceExistException {
         Optional<TaiKhoan> taiKhoan1 = taiKhoanService.findTaiKhoanById(taiKhoan.getMaTaiKhoan());
         if(taiKhoan1.isPresent()) {
-            throw new ResourceExistException("Tài khoản đã tổn tại.");
+            throw new ResourceExistException("Tài khoản đã tồn tại.");
         }
         return taiKhoanService.saveTaiKhoan(taiKhoan);
     }

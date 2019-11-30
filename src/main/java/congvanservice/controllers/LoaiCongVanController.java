@@ -48,7 +48,7 @@ public class LoaiCongVanController {
     public LoaiCongVan createLoaiCongVan(@RequestBody LoaiCongVan loaiCongVan) throws ResourceExistException {
         Optional<LoaiCongVan> loaiCongVan1 = loaiCongVanService.findLoaiCongVanById(loaiCongVan.getMaLoai());
         if(loaiCongVan1.isPresent()) {
-            throw new ResourceExistException("Loại công văn đã tổn tại.");
+            throw new ResourceExistException("Loại công văn đã tồn tại.");
         }
         return loaiCongVanService.saveLoaiCongVan(loaiCongVan);
     }

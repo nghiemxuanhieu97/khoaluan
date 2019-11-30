@@ -50,7 +50,7 @@ public class CongVanController {
     public CongVan createCongVan(@RequestBody CongVan congVan) throws ResourceExistException {
         Optional<CongVan> congVan1 = congVanService.findCongVanById(congVan.getId());
         if(congVan1.isPresent()) {
-            throw new ResourceExistException("Công văn đã tổn tại.");
+            throw new ResourceExistException("Công văn đã tồn tại.");
         }
         return congVanService.saveCongVan(congVan);
     }
