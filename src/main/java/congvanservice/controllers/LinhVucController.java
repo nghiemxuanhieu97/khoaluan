@@ -21,7 +21,7 @@ import java.util.Optional;
 public class LinhVucController {
     @Autowired
     private LinhVucService linhVucService;
-    //------------> Not query string in url
+
     @ApiOperation(value = "Tìm kiếm lĩnh vực theo mã lĩnh vực")
     @GetMapping(value="/linhvuc/{malinhvuc}")
     public ResponseEntity<LinhVuc> getLinhVuc(@PathVariable(name="malinhvuc") Integer maLinhVuc)

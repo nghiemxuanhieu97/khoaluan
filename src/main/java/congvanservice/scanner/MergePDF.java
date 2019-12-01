@@ -1,6 +1,5 @@
 package congvanservice.scanner;
 
-import congvanservice.controllers.FileController;
 import org.apache.pdfbox.io.MemoryUsageSetting;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 import org.apache.pdfbox.pdmodel.PDDocument;

@@ -21,7 +21,7 @@ import java.util.Optional;
 public class LoaiCongVanController {
     @Autowired
     private LoaiCongVanService loaiCongVanService;
-    //------------> Not query string in url
+
     @ApiOperation(value = "Tìm kiếm loại công văn theo mã loại")
     @GetMapping(value="/loaicongvan/{maloai}")
     public ResponseEntity<LoaiCongVan> getLoaiCongVan(@PathVariable(name="maloai") Integer maLoai) throws ResourceNotFoundException {

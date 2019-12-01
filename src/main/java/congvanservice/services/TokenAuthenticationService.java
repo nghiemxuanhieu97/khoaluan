@@ -29,8 +29,17 @@ public class TokenAuthenticationService {
         StringBuilder body = new StringBuilder().append("{")
                 .append("\"token\":\"")
                 .append(JWT)
-                .append("\"")
+                .append("\",")
+                .append("\"maTaiKhoan\": 1,")
+                .append("\"tenTaiKhoan\": \"Hieu\",")
+                .append("\"hoTen\": \"Nghiêm Xuân Hiếu\",")
+                .append("\"email\": \"nghiemxuanhieu97@gmail.com\",")
+                .append("\"diaChi\": \"Tô Ngọc Vân, Đà Lạt\",")
+                .append("\"phanQuyen\": \"Admin\",")
+                .append("\"trangThai\": \"false\",")
+                .append("\"sdt\": \"0367896040\",")
                 .append("}");
+        res.setCharacterEncoding("UTF-8");
         res.getWriter().write(body.toString());
         res.getWriter().flush();
         res.getWriter().close();

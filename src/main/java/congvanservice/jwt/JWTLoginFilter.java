@@ -2,6 +2,7 @@ package congvanservice.jwt;
 
 import congvanservice.models.TaiKhoan;
 import congvanservice.services.TokenAuthenticationService;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -28,7 +29,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(
                         taiKhoan.getTenTaiKhoan(),
-                        taiKhoan.getMatKhau(),
+                        DigestUtils.md5Hex(taiKhoan.getMatKhau()),
                         Collections.emptyList()
                 )
         );

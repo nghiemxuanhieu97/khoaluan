@@ -5,6 +5,9 @@ import congvanservice.scanner.ReadPDF;
 import congvanservice.scanner.Scanner;
 import congvanservice.scanner.UploadFileResponse;
 import congvanservice.services.FileStorageService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.Tag;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,8 +24,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/api")
+@Api(value = "Hệ thống quản lý tài nguyên", tags = {"Hệ thống quản lý tài nguyên"})
+@SwaggerDefinition(tags = {@Tag(name = "Hệ thống quản lý tài nguyên", description = "a")})
 public class FileController {
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
@@ -63,18 +69,17 @@ public class FileController {
 
     @GetMapping("/downloadFile/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
-        // Load file as Resource
+        // Lấy tài nguyên lên
         Resource resource = fileStorageService.loadFileAsResource(fileName);
 
-        // Try to determine file's content type
+        // Define content-type của tập tin
         String contentType = null;
         try {
             contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
         } catch (IOException ex) {
             logger.info("Could not determine file type.");
         }
-
-        // Fallback to the default content type if type could not be determined
+        // Content-type mặc định
         if(contentType == null) {
             contentType = "application/octet-stream";
         }
@@ -89,7 +94,6 @@ public class FileController {
     public ResponseEntity<CongVanContent> readFile(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws InterruptedException, IOException {
         String fileName = fileStorageService.storeFile(file);
         String content = "";
-
         String src = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName;
         String dst = fileStorageService.getFileStorageLocation().toString() + "\\" + fileName.split("\\.")[0];
         //Lưu file PDF vào đường dẫn đã định

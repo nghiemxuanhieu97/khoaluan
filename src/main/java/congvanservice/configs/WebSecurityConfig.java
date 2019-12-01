@@ -3,9 +3,7 @@ package congvanservice.configs;
 import congvanservice.jwt.JWTAuthenticationFilter;
 import congvanservice.jwt.JWTLoginFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -27,12 +25,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("Hieu").password("{noop}123456").roles("Admin");
+        auth.inMemoryAuthentication().withUser("Hieu").password("{noop}e10adc3949ba59abbe56e057f20f883e").roles("Admin");
 
        // Mình comment phần dưới này vì chúng ta ko sử dụng DB nhé. Nếu các bạn sử dụng, bỏ comment và config query sao cho phù hợp. Các bạn có thể GG để tìm hiểu thêm
-       auth.jdbcAuthentication()
-               .usersByUsernameQuery("select TenTaiKhoan, MatKhau, TrangThai from TaiKhoan where TenTaiKhoan=?")
-               .authoritiesByUsernameQuery("select TenTaiKhoan, PhanQuyen from TaiKhoan where TenTaiKhoan=?");
+//       auth.jdbcAuthentication()
+//               .usersByUsernameQuery("select TenTaiKhoan, MatKhau, TrangThai from TaiKhoan where TenTaiKhoan=?")
+//               .authoritiesByUsernameQuery("select TenTaiKhoan, PhanQuyen from TaiKhoan where TenTaiKhoan=?");
 //                        .passwordEncoder(new BCryptPasswordEncoder(16));
 
     }

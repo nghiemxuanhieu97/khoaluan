@@ -24,7 +24,8 @@ public class Swagger2Config {
                 .tags(new Tag("Hệ thống quản lý công văn","API Công văn"),
                         new Tag("Hệ thống quản lý loại công văn", "API Loại công văn"),
                         new Tag("Hệ thống quản lý tài khoản", "API Tài khoản"),
-                        new Tag("Hệ thống quản lý lĩnh vực", "API Lĩnh vực"));
+                        new Tag("Hệ thống quản lý lĩnh vực", "API Lĩnh vực"),
+                        new Tag("Hệ thống quản lý tài nguyên", "API tài nguyên"));
     }
 
     private ApiInfo apiEndPointsInfo(){

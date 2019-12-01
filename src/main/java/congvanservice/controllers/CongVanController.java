@@ -8,7 +8,6 @@ import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,7 +21,7 @@ import java.util.Optional;
 public class CongVanController {
     @Autowired
     private CongVanService congVanService;
-    //------------> Not query string in url
+
     @ApiOperation(value = "Tìm kiếm công văn theo ID")
     @GetMapping(value="/congvan/{id}")
     public ResponseEntity<CongVan> getCongVan(@PathVariable(name="id") Integer id)
