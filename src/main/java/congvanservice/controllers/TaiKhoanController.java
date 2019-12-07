@@ -2,13 +2,21 @@ package congvanservice.controllers;
 
 import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
+import congvanservice.jwt.JwtTokenProvider;
+import congvanservice.models.CustomUserDetails;
 import congvanservice.models.TaiKhoan;
 import congvanservice.services.TaiKhoanService;
 import io.swagger.annotations.*;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +29,10 @@ import java.util.Optional;
 public class TaiKhoanController {
     @Autowired
     private TaiKhoanService taiKhoanService;
+    @Autowired
+    AuthenticationManager authenticationManager;
+    @Autowired
+    private JwtTokenProvider tokenProvider;
 
     @ApiOperation(value = "Tìm kiếm tài khoản theo mã tài khoản")
     @GetMapping(value="/taikhoan/{mataikhoan}")
@@ -50,6 +62,7 @@ public class TaiKhoanController {
         if(taiKhoan1.isPresent()) {
             throw new ResourceExistException("Tài khoản đã tồn tại.");
         }
+        taiKhoan.setPassword(DigestUtils.md5Hex(taiKhoan.getPassword()));
         return taiKhoanService.saveTaiKhoan(taiKhoan);
     }
 
@@ -71,6 +84,21 @@ public class TaiKhoanController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("Xoá thành công", Boolean.TRUE);
         return response;
+    }
 
+    @ApiOperation(value = "Đăng nhập")
+    @PostMapping(value = "/login")
+    public ResponseEntity<TaiKhoan> authenticateUser(@Valid @RequestBody TaiKhoan taiKhoan) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        taiKhoan.getUsername(),
+                        DigestUtils.md5Hex(taiKhoan.getPassword())
+                )
+        );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        TaiKhoan taiKhoan1 = taiKhoanService.findTaiKhoanByUsername(taiKhoan.getUsername());
+        taiKhoan1.setToken(tokenProvider.generateToken((CustomUserDetails) authentication.getPrincipal()));
+        taiKhoanService.saveTaiKhoan(taiKhoan1);
+        return ResponseEntity.ok(taiKhoan1);
     }
 }

@@ -16,6 +16,10 @@ public class TaiKhoanProcessor implements TaiKhoanService {
     public Optional<TaiKhoan> findTaiKhoanById(Integer maTaiKhoan) {
         return taiKhoanRepository.findById(maTaiKhoan);
     }
+    @Override
+    public TaiKhoan findTaiKhoanByUsername(String username) {
+        return taiKhoanRepository.findByUsername(username);
+    }
 
     @Override
     public TaiKhoan saveTaiKhoan(TaiKhoan taiKhoan) {

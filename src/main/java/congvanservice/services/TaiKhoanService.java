@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface TaiKhoanService {
     //CRUD
     Optional<TaiKhoan> findTaiKhoanById(Integer maTaiKhoan);
+    TaiKhoan findTaiKhoanByUsername(String username);
     TaiKhoan saveTaiKhoan(TaiKhoan taiKhoan);
     TaiKhoan updateTaiKhoan(TaiKhoan taiKhoan);
     void deleteTaiKhoan(Integer maTaiKhoan);

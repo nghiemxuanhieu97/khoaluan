@@ -1,5 +1,6 @@
 package congvanservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -15,14 +16,14 @@ public class TaiKhoan {
     @ApiModelProperty(notes = "Mã tài khoản")
     Integer maTaiKhoan;
 
-
     @Column(name = "TenTaiKhoan", length = 30, nullable = false, unique = true)
     @ApiModelProperty(notes = "Tên tài khoản")
-    String tenTaiKhoan;
+
+    String username;
 
     @Column(name = "MatKhau", length = 50)
     @ApiModelProperty(notes = "Tên tài khoản")
-    String matKhau;
+    String password;
 
     @Column(name = "HoTen", columnDefinition = "nvarchar", length = 50)
     @ApiModelProperty(notes = "Họ tên")
@@ -48,9 +49,13 @@ public class TaiKhoan {
     @ApiModelProperty(notes = "Số điện thoại")
     String sdt;
 
-    public TaiKhoan(String tenTaiKhoan, String matKhau) {
-        this.tenTaiKhoan = tenTaiKhoan;
-        this.matKhau = matKhau;
+    @Column(name= "LastedToken")
+    @ApiModelProperty(notes = "Token mới nhất")
+    String token;
+
+    public TaiKhoan(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public TaiKhoan() {
@@ -64,20 +69,20 @@ public class TaiKhoan {
         this.maTaiKhoan = maTaiKhoan;
     }
 
-    public String getTenTaiKhoan() {
-        return tenTaiKhoan;
+    public String getUsername() {
+        return username;
     }
 
-    public void setTenTaiKhoan(String tenTaiKhoan) {
-        this.tenTaiKhoan = tenTaiKhoan;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getMatKhau() {
-        return matKhau;
+    public String getPassword() {
+        return password;
     }
 
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getHoTen() {
@@ -126,5 +131,13 @@ public class TaiKhoan {
 
     public void setSdt(String sdt) {
         this.sdt = sdt;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
