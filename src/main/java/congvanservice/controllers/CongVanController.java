@@ -115,8 +115,8 @@ public class CongVanController {
     }
 
     @ApiOperation(value = "Tìm công văn theo từ khoá")
-    @GetMapping(value = "/congvan/search/{keyword}")
-    public List<Integer> searchIDCongVanByKeyWord(@PathVariable(name="keyword") String keyword) {
-        return congVanService.findAllIDCongVan(keyword);
+    @GetMapping(value = "/congvan/search")
+    public List<Integer> searchIDCongVanByKeyWord(@RequestBody TuKhoa keyword) {
+        return congVanService.findAllIDCongVan(keyword.getTuKhoa());
     }
 }
