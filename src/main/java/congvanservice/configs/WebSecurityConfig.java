@@ -84,7 +84,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             // Other endpoints
             "/api/login",
             "/api/uploadFile",
-            "/api/readFile"
+            "/api/readFile",
+            "api/downloadFile/*"
     };
 
     @Override

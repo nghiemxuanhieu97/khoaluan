@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface CongVanRepository extends JpaRepository<CongVan, Integer> {
-    @Query("select line.idCongVan from CongVan_TuKhoa line, TuKhoa keyword where line.idTuKhoa = keyword.id and keyword.tuKhoa like N'%?1%'")
+    @Query( value= "Select line.IDCongVan from CongVan_TuKhoa line join TuKhoa keyword  ON (line.IDTuKhoa = keyword.ID ) where keyword.TuKhoa LIKE N'%:keyword%'", nativeQuery = true)
     List<Integer> findAllIDCongVan(String keyword);
 }
