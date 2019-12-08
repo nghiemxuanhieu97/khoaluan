@@ -8,9 +8,9 @@ import javax.persistence.*;
 
 @Entity()
 @Data
-@Table(name="Dong")
-@ApiModel(description = "Dòng")
-public class Dong {
+@Table(name="CongVan_TuKhoa")
+@ApiModel(description = "Công văn - Từ khoá")
+public class CongVan_TuKhoa {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Dong {
     @ApiModelProperty(notes = "Cho biết từ khoá thuộc công văn")
     Integer idTuKhoa;
 
-    public Dong(Integer idCongVan, Integer idTuKhoa) {
+    public CongVan_TuKhoa(Integer idCongVan, Integer idTuKhoa) {
         this.idCongVan = idCongVan;
         this.idTuKhoa = idTuKhoa;
     }

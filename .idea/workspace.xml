@@ -4,11 +4,11 @@
     <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="FUK CORS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/CongVanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/CongVanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/jwt/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/jwt/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/services/CongVanProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/services/CongVanProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/services/CongVanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/services/CongVanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/TaiKhoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/TaiKhoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/models/Dong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan_TuKhoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/DongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVan_TuKhoa_Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/services/DongProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/services/CongVan_TuKhoa_Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/services/DongService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/services/CongVan_TuKhoa_Service.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

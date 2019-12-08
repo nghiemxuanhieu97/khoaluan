@@ -72,6 +72,7 @@ public class TaiKhoanController {
                                                  @RequestBody TaiKhoan taiKhoan) throws ResourceNotFoundException {
         TaiKhoan taiKhoan1 = taiKhoanService.findTaiKhoanById(maTaiKhoan).orElseThrow(()->
                 new ResourceNotFoundException("Không tìm thấy tài khoản với mã tài khoản = "+maTaiKhoan));
+        taiKhoan.setPassword(DigestUtils.md5Hex(taiKhoan.getPassword()));
         taiKhoanService.updateTaiKhoan(taiKhoan);
         return ResponseEntity.ok(taiKhoan);
     }

@@ -4,10 +4,10 @@ import congvanservice.dtos.CongVanDTO;
 import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
 import congvanservice.models.CongVan;
-import congvanservice.models.Dong;
+import congvanservice.models.CongVan_TuKhoa;
 import congvanservice.models.TuKhoa;
 import congvanservice.services.CongVanService;
-import congvanservice.services.DongService;
+import congvanservice.services.CongVan_TuKhoa_Service;
 import congvanservice.services.TuKhoaService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class CongVanController {
     @Autowired
     private TuKhoaService tuKhoaService;
     @Autowired
-    private DongService dongService;
+    private CongVan_TuKhoa_Service congVanTuKhoaService;
 
     @ApiOperation(value = "Tìm kiếm công văn theo ID")
     @GetMapping(value="/congvan/{id}")
@@ -63,19 +63,19 @@ public class CongVanController {
             throw new ResourceExistException("Công văn đã tồn tại.");
         }
         //Lấy danh sách từ khoá hiện có để so sánh
-//        List<TuKhoa> tuDien = tuKhoaService.findAll();
-//        List<String> noiDungCongVan = Arrays.asList(congVan.getTrichYeu().split(" "));
-//        for (TuKhoa keyword : tuDien ) {
-//            if(!noiDungCongVan.contains(keyword.getTuKhoa())) {
-//                TuKhoa tuMoi = new TuKhoa();
-//                tuMoi.setTuKhoa(keyword.getTuKhoa());
-//                tuKhoaService.saveTuKhoa(tuMoi);
-//                dongService.saveDong(new Dong(congVan.getId(),tuMoi.getId()));
-//            } else {
-//                Dong value = new Dong(congVan.getId(),keyword.getId());
-//                dongService.saveDong(value);
-//            }
-//        }
+        List<TuKhoa> tuDien = tuKhoaService.findAll();
+        List<String> noiDungCongVan = Arrays.asList(congVan.getTrichYeu().split(" "));
+        for (TuKhoa keyword : tuDien ) {
+            if(!noiDungCongVan.contains(keyword.getTuKhoa())) {
+                TuKhoa tuMoi = new TuKhoa();
+                tuMoi.setTuKhoa(keyword.getTuKhoa());
+                tuKhoaService.saveTuKhoa(tuMoi);
+                congVanTuKhoaService.saveDong(new CongVan_TuKhoa(congVan.getId(),tuMoi.getId()));
+            } else {
+                CongVan_TuKhoa value = new CongVan_TuKhoa(congVan.getId(),keyword.getId());
+                congVanTuKhoaService.saveDong(value);
+            }
+        }
 
         return congVanService.saveCongVan(congVan);
     }
@@ -93,6 +93,7 @@ public class CongVanController {
     @DeleteMapping(value = "/congvan/{id}")
     public Map<String, Boolean> deleteCongVan(@PathVariable(name="id") Integer id) throws ResourceNotFoundException {
         CongVan congVan1 = congVanService.findCongVanById(id).orElseThrow(()-> new ResourceNotFoundException("Không tìm thấy công văn với id = "+id));
+        congVanTuKhoaService.deleteCongVan_TuKhoaByIdCongVan(id);
         congVanService.deleteCongVan(id);
         Map<String, Boolean> response = new HashMap<>();
         response.put("Xoá thành công", Boolean.TRUE);
