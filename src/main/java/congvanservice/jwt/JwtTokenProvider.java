@@ -13,8 +13,8 @@ public class JwtTokenProvider {
     // Đoạn JWT_SECRET này là bí mật, chỉ có phía server biết
     private final String JWT_SECRET = "secret";
 
-    //Thời gian có hiệu lực của chuỗi jwt
-    private final long JWT_EXPIRATION = 604800000L;
+    //Thời gian có hiệu lực của chuỗi jwt 1 tiếng
+    private final long JWT_EXPIRATION = 3600000L;
 
     // Tạo ra jwt từ thông tin user
     public String generateToken(CustomUserDetails userDetails) {
