@@ -41,4 +41,9 @@ public class CongVanProcessor implements CongVanService {
     public List<CongVan> findAll() {
         return congVanRepository.findAll();
     }
+
+    @Override
+    public List<Integer> findAllIDCongVan(String keyword) {
+        return congVanRepository.findAllIDCongVan(keyword);
+    }
 }

@@ -1,5 +1,6 @@
 package congvanservice.models;
 
+import congvanservice.dtos.CongVanDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -70,4 +71,22 @@ public class CongVan {
     @ApiModelProperty(notes = "Tìm dòng")
     String timDong;
 
+     public CongVan toMap(CongVanDTO congVanDTO) {
+        CongVan congVan = new CongVan();
+        congVan.setId(congVanDTO.getId());
+        congVan.setSoKyHieu(congVanDTO.getSoKyHieu());
+        congVan.setMucDo(congVanDTO.getMucDo());
+        congVan.setTrichYeu(congVanDTO.getTrichYeu());
+        congVan.setTapTin(congVanDTO.getTapTin());
+        congVan.setNguoiKy(congVanDTO.getNguoiKy());
+        congVan.setCoQuanBanHanh(congVanDTO.getCoQuanBanHanh());
+        congVan.setNgayCoHieuLuc(congVanDTO.getNgayCoHieuLuc());
+        congVan.setNoiNhan(congVanDTO.getNoiNhan());
+        congVan.setMaLinhVuc(congVanDTO.getMaLinhVuc());
+        congVan.setMaLoai(congVanDTO.getMaLoai());
+        congVan.setNoiDung(congVanDTO.getNoiDung());
+        congVan.setTimDong(congVanDTO.getTimDong());
+        return congVan;
+
+    }
 }

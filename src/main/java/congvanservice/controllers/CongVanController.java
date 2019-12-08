@@ -1,18 +1,20 @@
 package congvanservice.controllers;
 
+import congvanservice.dtos.CongVanDTO;
 import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
 import congvanservice.models.CongVan;
+import congvanservice.models.Dong;
+import congvanservice.models.TuKhoa;
 import congvanservice.services.CongVanService;
+import congvanservice.services.DongService;
+import congvanservice.services.TuKhoaService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api")
@@ -21,6 +23,10 @@ import java.util.Optional;
 public class CongVanController {
     @Autowired
     private CongVanService congVanService;
+    @Autowired
+    private TuKhoaService tuKhoaService;
+    @Autowired
+    private DongService dongService;
 
     @ApiOperation(value = "Tìm kiếm công văn theo ID")
     @GetMapping(value="/congvan/{id}")
@@ -46,11 +52,31 @@ public class CongVanController {
 
     @ApiOperation(value = "Thêm một công văn mới")
     @PostMapping(value = "/congvan")
-    public CongVan createCongVan(@RequestBody CongVan congVan) throws ResourceExistException {
+    public CongVan createCongVan(@RequestBody CongVanDTO congVanDTO) throws ResourceExistException {
+        System.out.println(congVanDTO);
+
+        CongVan congVan = new CongVan().toMap(congVanDTO);
         Optional<CongVan> congVan1 = congVanService.findCongVanById(congVan.getId());
+
+        System.out.println(congVan);
         if(congVan1.isPresent()) {
             throw new ResourceExistException("Công văn đã tồn tại.");
         }
+        //Lấy danh sách từ khoá hiện có để so sánh
+//        List<TuKhoa> tuDien = tuKhoaService.findAll();
+//        List<String> noiDungCongVan = Arrays.asList(congVan.getTrichYeu().split(" "));
+//        for (TuKhoa keyword : tuDien ) {
+//            if(!noiDungCongVan.contains(keyword.getTuKhoa())) {
+//                TuKhoa tuMoi = new TuKhoa();
+//                tuMoi.setTuKhoa(keyword.getTuKhoa());
+//                tuKhoaService.saveTuKhoa(tuMoi);
+//                dongService.saveDong(new Dong(congVan.getId(),tuMoi.getId()));
+//            } else {
+//                Dong value = new Dong(congVan.getId(),keyword.getId());
+//                dongService.saveDong(value);
+//            }
+//        }
+
         return congVanService.saveCongVan(congVan);
     }
 
@@ -72,5 +98,11 @@ public class CongVanController {
         response.put("Xoá thành công", Boolean.TRUE);
         return response;
 
+    }
+
+    @ApiOperation(value = "Tìm công văn theo từ khoá")
+    @GetMapping(value = "/congvan/{keyword}")
+    public List<Integer> searchIDCongVanByKeyWord(@PathVariable(name="keyword") String keyword) {
+        return congVanService.findAllIDCongVan(keyword);
     }
 }

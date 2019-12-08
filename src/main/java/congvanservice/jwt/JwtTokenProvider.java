@@ -17,8 +17,8 @@ public class JwtTokenProvider {
     // Đoạn JWT_SECRET này là bí mật, chỉ có phía server biết
     private final String JWT_SECRET = "secret";
 
-    //Thời gian có hiệu lực của chuỗi jwt 1 tiếng
-    private final long JWT_EXPIRATION = 3600000L;
+    //Thời gian có hiệu lực của chuỗi jwt 1 tuần
+    private final long JWT_EXPIRATION = 604800000L;
 
     // Tạo ra jwt từ thông tin user
     public String generateToken(CustomUserDetails userDetails) {
@@ -46,7 +46,6 @@ public class JwtTokenProvider {
     public boolean validateToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(authToken);
-
             return true;
         } catch (MalformedJwtException ex) {
             log.error("Invalid JWT token");

@@ -13,4 +13,5 @@ public interface CongVanService {
     void deleteCongVan(Integer id);
     //Other
     List<CongVan> findAll();
+    List<Integer> findAllIDCongVan(String keyword);
 }
