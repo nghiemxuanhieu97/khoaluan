@@ -7,7 +7,6 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity()
-@Data
 @Table(name="TuKhoa")
 @ApiModel(description = "Từ khoá")
 public class TuKhoa {
@@ -20,4 +19,29 @@ public class TuKhoa {
     @Column(name="TuKhoa", columnDefinition = "nvarchar", length = 4000)
     @ApiModelProperty(notes = "Từ khoá")
     String tuKhoa;
+    public TuKhoa() { }
+    public TuKhoa(String tuKhoa) {
+        this.tuKhoa = tuKhoa;
+    }
+
+    public TuKhoa(Integer id, String tuKhoa) {
+        this.id = id;
+        this.tuKhoa = tuKhoa;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTuKhoa() {
+        return tuKhoa;
+    }
+
+    public void setTuKhoa(String tuKhoa) {
+        this.tuKhoa = tuKhoa;
+    }
 }

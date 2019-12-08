@@ -53,31 +53,44 @@ public class CongVanController {
     @ApiOperation(value = "Thêm một công văn mới")
     @PostMapping(value = "/congvan")
     public CongVan createCongVan(@RequestBody CongVanDTO congVanDTO) throws ResourceExistException {
-        System.out.println(congVanDTO);
 
         CongVan congVan = new CongVan().toMap(congVanDTO);
-        Optional<CongVan> congVan1 = congVanService.findCongVanById(congVan.getId());
+        CongVan congVanNew = congVanService.saveCongVan(congVan);
+        //Input: 1 list keyword
+        List<String> listKeyWord = congVanDTO.getKeyword();
 
-        System.out.println(congVan);
-        if(congVan1.isPresent()) {
-            throw new ResourceExistException("Công văn đã tồn tại.");
-        }
-        //Lấy danh sách từ khoá hiện có để so sánh
-        List<TuKhoa> tuDien = tuKhoaService.findAll();
-        List<String> noiDungCongVan = Arrays.asList(congVan.getTrichYeu().split(" "));
-        for (TuKhoa keyword : tuDien ) {
-            if(!noiDungCongVan.contains(keyword.getTuKhoa())) {
-                TuKhoa tuMoi = new TuKhoa();
-                tuMoi.setTuKhoa(keyword.getTuKhoa());
-                tuKhoaService.saveTuKhoa(tuMoi);
-                congVanTuKhoaService.saveDong(new CongVan_TuKhoa(congVan.getId(),tuMoi.getId()));
-            } else {
-                CongVan_TuKhoa value = new CongVan_TuKhoa(congVan.getId(),keyword.getId());
-                congVanTuKhoaService.saveDong(value);
+        for(String keyword : listKeyWord)
+        {
+            //Lấy danh sách các từ khoá trong từ điển
+            List<TuKhoa> tuDien = tuKhoaService.findAll();
+            // Nếu trong từ điển chưa có từ nào hết ->> thêm giá trị mới cho từ điển
+
+            if(tuDien.size()==0) {
+                // 1 key : value
+                TuKhoa tuMoi = tuKhoaService.saveTuKhoa(new TuKhoa(null, keyword));
+                congVanTuKhoaService.saveDong(new CongVan_TuKhoa(congVanNew.getId(),tuMoi.getId()));
             }
-        }
+            ////////////////////////===============
+            Boolean exist = false;
+            Integer id = -1;
+            for(TuKhoa key : tuDien){
+                if(key.getTuKhoa().equals(keyword)){
+                    exist=true;
+                    id = key.getId();
+                    break;
+                }
+            }
+            //Nếu từ khóa đã có trong từ điển
+            if(exist){
+                //Thì thêm value cho từ khóa đó
+                congVanTuKhoaService.saveDong(new CongVan_TuKhoa(congVanNew.getId(),id));
+            }else{
+                TuKhoa tuMoi = tuKhoaService.saveTuKhoa(new TuKhoa(null, keyword));
+                congVanTuKhoaService.saveDong(new CongVan_TuKhoa(congVanNew.getId(),tuMoi.getId()));
+            }
 
-        return congVanService.saveCongVan(congVan);
+        }
+        return congVanNew;
     }
 
     @ApiOperation(value = "Cập nhật công văn")
