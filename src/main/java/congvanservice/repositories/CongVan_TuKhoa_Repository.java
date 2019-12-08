@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CongVan_TuKhoa_Repository extends JpaRepository<CongVan_TuKhoa, Integer> {
-    @Query(value = "DELETE FROM CongVan_TuKhoa WHERE CongVan_TuKhoa.idCongVan = ?1")
+    @Query(value = "DELETE FROM CongVan_TuKhoa s WHERE s.idCongVan = ?1")
     void deleteCongVan_TuKhoaByIdCongVan(Integer id);
 }
