@@ -78,8 +78,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/configuration/ui",
             "/configuration/security",
             "/swagger-ui.html",
-            "/webjars/**"
-            // other public endpoints of your API may be appended to this array
+            "/webjars/**",
+            // Other endpoints
+            "/api/login",
+            "/api/uploadFile"
     };
 
     @Override
@@ -91,8 +93,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                     .authorizeRequests()
                         .antMatchers(AUTH_WHITELIST).permitAll()
-                        .antMatchers("/api/login").permitAll()
-                        .antMatchers("/api/uploadFile").permitAll()
                     .anyRequest().authenticated(); // Các request còn lại đều cần được authenticated
 
             http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
