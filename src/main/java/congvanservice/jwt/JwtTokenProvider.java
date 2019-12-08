@@ -1,8 +1,10 @@
 package congvanservice.jwt;
 
 import congvanservice.models.CustomUserDetails;
+import congvanservice.services.TaiKhoanService;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -10,6 +12,8 @@ import java.util.Date;
 @Component
 @Slf4j
 public class JwtTokenProvider {
+    @Autowired
+    TaiKhoanService taiKhoanService;
     // Đoạn JWT_SECRET này là bí mật, chỉ có phía server biết
     private final String JWT_SECRET = "secret";
 
@@ -42,6 +46,7 @@ public class JwtTokenProvider {
     public boolean validateToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(authToken);
+
             return true;
         } catch (MalformedJwtException ex) {
             log.error("Invalid JWT token");

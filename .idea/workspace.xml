@@ -1,31 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="">
+    <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="done YMD">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/CongVanServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/CongVanServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/ResourceServerClientConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/Swagger2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/configs/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/CongVanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/CongVanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/LinhVucController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/LinhVucController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/LoaiCongVanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/LoaiCongVanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/TaiKhoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/controllers/TaiKhoanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/filters/MyCORSFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/filters/MyCORSFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/jwt/JWTAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/jwt/JWTAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/jwt/JWTLoginFilter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/CongVan.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/CongVan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/LoaiCongVan.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/LoaiCongVan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/TaiKhoan.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/models/TaiKhoan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/repositories/TaiKhoanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/repositories/TaiKhoanRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/MergePDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/scanner/MergePDF.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/FileStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/FileStorageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/Báo cáo khoá luận.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/Bản tường trình vắng mặt BCKL - CTK39.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/img016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/img016.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample.txt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinh-cong-van/sample1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/services/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/services/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TaiKhoanProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TaiKhoanProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TaiKhoanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TaiKhoanService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TokenAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/congvanservice/services/TokenAuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/vie.traineddata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191201105714.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191201105714.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202040152280000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202040152280000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202042734361000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202042734361000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202153143717000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202153143717000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202155752226000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202155752226000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202155945611000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202155945611000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160035459000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160035459000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160122500000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160122500000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160330295000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160330295000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160510461000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160510461000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160616621000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202160616621000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161336783000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161336783000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161336796000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161336796000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161337062000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161337062000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161337064000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161337064000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161506224000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161506224000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161506306000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161506306000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161506388000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202161506388000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202164537340000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202164537340000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202173632888000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202173632888000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202180641784000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191202180641784000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191206095700444000.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinh-cong-van/20191206095700444000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/configs/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/configs/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/jwt/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/jwt/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +103,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CongVanService" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -187,5 +249,16 @@
     <MESSAGE value="UploadImage" />
     <MESSAGE value="Fixing acrony" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixing acrony" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/congvanservice/jwt/JwtTokenProvider.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
