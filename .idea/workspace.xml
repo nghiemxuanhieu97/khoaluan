@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="FUK CORS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/configs/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/configs/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/services/TokenAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/CongVanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/CongVanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

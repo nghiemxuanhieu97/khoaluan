@@ -115,7 +115,7 @@ public class CongVanController {
     }
 
     @ApiOperation(value = "Tìm công văn theo từ khoá")
-    @GetMapping(value = "/congvan/search")
+    @PostMapping(value = "/congvan/search")
     public List<List<Integer>> searchIDCongVanByKeyWord(@RequestBody TuKhoa keyword) {
         String[] lstSpitKeyWord = keyword.getTuKhoa().split("\\s+");
         List<List<Integer>> result = new ArrayList<List<Integer>>();
