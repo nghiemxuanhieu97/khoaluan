@@ -85,7 +85,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/api/login",
             "/api/uploadFile",
             "/api/readFile",
-            "api/downloadFile/*"
+            "/api/downloadFile/*",
+            "/api/congvan/search"
     };
 
     @Override
