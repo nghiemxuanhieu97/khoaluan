@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity()
 @Data
-@Table(name="CongVan_TuKhoa")
+@Table(name="CongVan_TuKhoa", schema = "dbo")
 @ApiModel(description = "Công văn - Từ khoá")
 public class CongVan_TuKhoa {
     @Id
