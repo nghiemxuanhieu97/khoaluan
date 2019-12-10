@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CongVanDTO  extends CongVan {
 
-    List<String> keyword;
+    private List<String> keyword;
     public List<String> getKeyword() {
         return keyword;
     }

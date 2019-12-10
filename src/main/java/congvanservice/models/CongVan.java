@@ -80,6 +80,7 @@ public class CongVan {
         congVan.setTapTin(congVanDTO.getTapTin());
         congVan.setNguoiKy(congVanDTO.getNguoiKy());
         congVan.setCoQuanBanHanh(congVanDTO.getCoQuanBanHanh());
+        congVan.setNgayBanHanh(congVanDTO.getNgayBanHanh());
         congVan.setNgayCoHieuLuc(congVanDTO.getNgayCoHieuLuc());
         congVan.setNoiNhan(congVanDTO.getNoiNhan());
         congVan.setMaLinhVuc(congVanDTO.getMaLinhVuc());
