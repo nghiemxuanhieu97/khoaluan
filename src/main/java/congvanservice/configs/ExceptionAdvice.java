@@ -1,5 +1,6 @@
 package congvanservice.configs;
 
+import congvanservice.exceptions.UserNotActiveException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,5 +20,9 @@ public class ExceptionAdvice {
     @ExceptionHandler(BadCredentialsException.class)
     ResponseEntity handleBadCredentialsException(BadCredentialsException ex) {
         return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+    @ExceptionHandler(UserNotActiveException.class)
+    ResponseEntity handleUserNotActiveException(UserNotActiveException ex) {
+        return new ResponseEntity(HttpStatus.UNAUTHORIZED);
     }
 }

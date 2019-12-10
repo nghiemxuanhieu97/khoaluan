@@ -2,6 +2,7 @@ package congvanservice.controllers;
 
 import congvanservice.exceptions.ResourceExistException;
 import congvanservice.exceptions.ResourceNotFoundException;
+import congvanservice.exceptions.UserNotActiveException;
 import congvanservice.jwt.JwtTokenProvider;
 import congvanservice.models.CustomUserDetails;
 import congvanservice.models.TaiKhoan;
@@ -98,6 +99,9 @@ public class TaiKhoanController {
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
         TaiKhoan taiKhoan1 = taiKhoanService.findTaiKhoanByUsername(taiKhoan.getUsername());
+        if(!taiKhoan1.getTrangThai()) {
+            throw new UserNotActiveException("User not active!");
+        }
         taiKhoan1.setToken(tokenProvider.generateToken((CustomUserDetails) authentication.getPrincipal()));
         taiKhoanService.saveTaiKhoan(taiKhoan1);
         return ResponseEntity.ok(taiKhoan1);

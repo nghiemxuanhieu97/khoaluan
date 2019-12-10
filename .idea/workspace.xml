@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f85ad5df-bcad-4e4d-927a-2d1ae597296e" name="Default Changelist" comment="FUK CORS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan_TuKhoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/models/CongVan_TuKhoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVan_TuKhoa_Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVan_TuKhoa_Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/configs/ExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/configs/ExceptionAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/TaiKhoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/TaiKhoanController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,26 +179,5 @@
     <MESSAGE value="Fixing acrony" />
     <MESSAGE value="FUK CORS" />
     <option name="LAST_COMMIT_MESSAGE" value="FUK CORS" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/congvanservice/controllers/TaiKhoanController.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/congvanservice/jwt/JwtAuthenticationFilter.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/congvanservice/controllers/TaiKhoanController.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
