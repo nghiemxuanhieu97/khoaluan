@@ -40,11 +40,17 @@ public class LoaiCongVanController {
     @ApiOperation(value = "Xem danh sách các loại công văn")
     @GetMapping(value="/loaicongvan")
     public List<LoaiCongVan> getAllLoaiCongVan(@RequestParam(name="limit", required = false) Integer limit,
-                                               @RequestParam(name="offset", required = false) Integer offset){
+                                               @RequestParam(name="offset", required = false) Integer offset) throws ResourceNotFoundException {
         List<LoaiCongVan> loaicongVanList = loaiCongVanService.findAll();
         offset = offset == null? 0 : offset;
         limit = limit == null? loaicongVanList.size() : limit;
-        return loaicongVanList.subList(offset * limit, offset * limit + limit);
+        if(limit > loaicongVanList.size() && offset == 0) {
+            return loaicongVanList.subList(0, loaicongVanList.size());
+        }
+        if(offset >= ((loaicongVanList.size()/limit)+(loaicongVanList.size()%limit))) {
+            throw new ResourceNotFoundException("Không tìm thấy tài nguyên ở offset thứ: " + offset);
+        }
+        return loaicongVanList.subList(offset * limit, Math.min((offset * limit + limit), loaicongVanList.size()));
     }
 
     @ApiOperation(value = "Thêm một loại công văn mới")

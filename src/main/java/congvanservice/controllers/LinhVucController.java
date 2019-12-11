@@ -41,11 +41,17 @@ public class LinhVucController {
     @ApiOperation(value = "Xem danh sách các lĩnh vực")
     @GetMapping(value="/linhvuc")
     public List<LinhVuc> getAllLinhVuc(@RequestParam(name="limit", required = false) Integer limit,
-                                       @RequestParam(name="offset", required = false) Integer offset){
+                                       @RequestParam(name="offset", required = false) Integer offset) throws ResourceNotFoundException {
         List<LinhVuc> linhVucList = linhVucService.findAll();
         offset = offset == null? 0 : offset;
         limit = limit == null? linhVucList.size() : limit;
-        return linhVucList.subList(offset * limit, offset * limit + limit);
+        if(limit > linhVucList.size() && offset == 0) {
+            return linhVucList.subList(0, linhVucList.size());
+        }
+        if(offset >= ((linhVucList.size()/limit)+(linhVucList.size()%limit))) {
+            throw new ResourceNotFoundException("Không tìm thấy tài nguyên ở offset thứ: " + offset);
+        }
+        return linhVucList.subList(offset * limit, Math.min((offset * limit + limit), linhVucList.size()));
     }
 
     @ApiOperation(value = "Thêm một lĩnh vực mới")

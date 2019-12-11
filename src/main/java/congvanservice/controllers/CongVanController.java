@@ -47,11 +47,17 @@ public class CongVanController {
     @ApiOperation(value = "Xem danh sách các công văn")
     @GetMapping(value="/congvan")
     public List<CongVan> getAllCongVan(@RequestParam(name="limit", required = false) Integer limit,
-                                       @RequestParam(name="offset", required = false) Integer offset) {
+                                       @RequestParam(name="offset", required = false) Integer offset) throws ResourceNotFoundException {
         List<CongVan> congVanList = congVanService.findAll();
         offset = offset == null? 0 : offset;
         limit = limit == null? congVanList.size() : limit;
-        return congVanList.subList(offset * limit, offset * limit + limit);
+        if(limit > congVanList.size() && offset == 0) {
+            return congVanList.subList(0, congVanList.size());
+        }
+        if(offset >= ((congVanList.size()/limit)+(congVanList.size()%limit))) {
+            throw new ResourceNotFoundException("Không tìm thấy tài nguyên ở offset thứ: " + offset);
+        }
+        return congVanList.subList(offset * limit, Math.min((offset * limit + limit), congVanList.size()));
     }
 
 
