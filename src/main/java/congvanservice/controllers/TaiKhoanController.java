@@ -52,8 +52,12 @@ public class TaiKhoanController {
 
     @ApiOperation(value = "Xem danh sách các tài khoản")
     @GetMapping(value="/taikhoan")
-    public List<TaiKhoan> getAllTaiKhoan(){
-        return taiKhoanService.findAll();
+    public List<TaiKhoan> getAllTaiKhoan(@RequestParam(name="limit", required = false) Integer limit,
+                                         @RequestParam(name="offset", required = false) Integer offset){
+        List<TaiKhoan> taiKhoanList = taiKhoanService.findAll();
+        offset = offset == null? 0 : offset;
+        limit = limit == null? taiKhoanList.size() : limit;
+        return taiKhoanList.subList(offset * limit, offset * limit + limit);
     }
 
     @ApiOperation(value = "Thêm một tài khoản mới")

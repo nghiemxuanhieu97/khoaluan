@@ -40,8 +40,12 @@ public class LinhVucController {
 
     @ApiOperation(value = "Xem danh sách các lĩnh vực")
     @GetMapping(value="/linhvuc")
-    public List<LinhVuc> getAllLinhVuc(){
-        return linhVucService.findAll();
+    public List<LinhVuc> getAllLinhVuc(@RequestParam(name="limit", required = false) Integer limit,
+                                       @RequestParam(name="offset", required = false) Integer offset){
+        List<LinhVuc> linhVucList = linhVucService.findAll();
+        offset = offset == null? 0 : offset;
+        limit = limit == null? linhVucList.size() : limit;
+        return linhVucList.subList(offset * limit, offset * limit + limit);
     }
 
     @ApiOperation(value = "Thêm một lĩnh vực mới")

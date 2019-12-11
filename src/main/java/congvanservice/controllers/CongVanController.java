@@ -50,7 +50,7 @@ public class CongVanController {
                                        @RequestParam(name="offset", required = false) Integer offset) {
         List<CongVan> congVanList = congVanService.findAll();
         offset = offset == null? 0 : offset;
-        limit = limit == null? 10 : congVanList.size();
+        limit = limit == null? congVanList.size() : limit;
         return congVanList.subList(offset * limit, offset * limit + limit);
     }
 

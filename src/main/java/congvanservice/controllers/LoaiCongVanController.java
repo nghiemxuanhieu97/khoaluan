@@ -39,8 +39,12 @@ public class LoaiCongVanController {
 
     @ApiOperation(value = "Xem danh sách các loại công văn")
     @GetMapping(value="/loaicongvan")
-    public List<LoaiCongVan> getAllLoaiCongVan(){
-        return loaiCongVanService.findAll();
+    public List<LoaiCongVan> getAllLoaiCongVan(@RequestParam(name="limit", required = false) Integer limit,
+                                               @RequestParam(name="offset", required = false) Integer offset){
+        List<LoaiCongVan> loaicongVanList = loaiCongVanService.findAll();
+        offset = offset == null? 0 : offset;
+        limit = limit == null? loaicongVanList.size() : limit;
+        return loaicongVanList.subList(offset * limit, offset * limit + limit);
     }
 
     @ApiOperation(value = "Thêm một loại công văn mới")
