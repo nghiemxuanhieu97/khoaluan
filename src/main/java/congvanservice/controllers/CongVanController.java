@@ -46,9 +46,14 @@ public class CongVanController {
 
     @ApiOperation(value = "Xem danh sách các công văn")
     @GetMapping(value="/congvan")
-    public List<CongVan> getAllCongVan(){
-        return congVanService.findAll();
+    public List<CongVan> getAllCongVan(@RequestParam(name="limit", required = false) Integer limit,
+                                       @RequestParam(name="offset", required = false) Integer offset) {
+        List<CongVan> congVanList = congVanService.findAll();
+        offset = offset == null? 0 : offset;
+        limit = limit == null? 10 : congVanList.size();
+        return congVanList.subList(offset * limit, offset * limit + limit);
     }
+
 
     @ApiOperation(value = "Thêm một công văn mới")
     @PostMapping(value = "/congvan")
