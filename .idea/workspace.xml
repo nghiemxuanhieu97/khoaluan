@@ -3,13 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e75bdacd-bbf0-4334-a6d5-b804c9bc78c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/CongVanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/controllers/CongVanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/congvanservice/repositories/CongVanRepository.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -96,7 +101,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

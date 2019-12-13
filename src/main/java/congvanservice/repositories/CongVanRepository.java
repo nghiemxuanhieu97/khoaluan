@@ -12,6 +12,6 @@ public interface CongVanRepository extends JpaRepository<CongVan, Integer> {
     @Query( value= "Select line.IDCongVan " +
                     "from CongVan_TuKhoa line join TuKhoa keyword  " +
                     "ON (line.IDTuKhoa = keyword.ID ) " +
-                    "where keyword.TuKhoa = :key", nativeQuery = true)
+                    "where keyword.TuKhoa like :key%", nativeQuery = true)
     List<Integer> findAllIDCongVan(@Param("key")String keyWord);
 }
